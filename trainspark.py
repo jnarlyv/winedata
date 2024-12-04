@@ -70,13 +70,5 @@ evaluator = MulticlassClassificationEvaluator(labelCol="label", predictionCol="p
 
 f1_score = evaluator.evaluate(model.transform(trainData))
 
-
-# Saving the result to a file
-f1_score_output = f"F1 Score on train data: {f1_score}\n"
-
-with open("/tmp/f1_score_output.txt", "w") as file:
-    file.write(f1_score_output)
-
-# Upload the file to S3
-s3 = boto3.client('s3a')
-s3.upload_file('/tmp/f1_score_output.txt', 'mlptrain', 'f1_score_output.txt')
+#Printing F1 Score for train data
+print(f"F1 Score on train data: {f1_score}\n")
