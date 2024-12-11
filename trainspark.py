@@ -1,5 +1,4 @@
 #importing necesarry libraries
-import boto3
 from pyspark.sql import SparkSession
 from pyspark.ml.feature import VectorAssembler
 from pyspark.sql.types import DoubleType, StructField, StructType
